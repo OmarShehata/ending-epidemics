@@ -1,0 +1,33 @@
+/* Inspired by distill.pub */
+body {
+	font-family: HoeflerText-Regular,Cochin,Georgia,serif;
+}
+
+.article {
+	width: 640px;
+	margin-left: auto;
+	margin-right:auto;
+}
+
+.centered-text {
+	text-align: center;
+}
+.faded-text {
+	color: rgba(0, 0, 0, 0.5);
+}
+
+.title-top {
+	margin-bottom: 0px;
+}
+.title-bottom {
+	margin-top:0px;
+}
+
+.article h1 {
+	font-size:58px;
+	font-weight: 100;
+}
+
+.article p {
+	
+}
