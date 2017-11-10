@@ -3,6 +3,26 @@ body {
 	font-family: HoeflerText-Regular,Cochin,Georgia,serif;
 }
 
+/* unvisited link */
+a:link {
+    color: #B2506A;
+}
+
+/* visited link */
+a:visited {
+    color: #662E3C;
+}
+
+/* mouse over link */
+a:hover {
+    color: #E56788;
+}
+
+/* selected link */
+a:active {
+    color: #E56788;
+} 
+
 .article {
 	width: 640px;
 	margin-left: auto;
@@ -15,6 +35,7 @@ body {
 .faded-text {
 	color: rgba(0, 0, 0, 0.5);
 }
+
 
 .title-top {
 	margin-bottom: 0px;
@@ -35,6 +56,10 @@ body {
 	font-size:20px;
 	line-height: 31px;
 	color:rgba(0, 0, 0, 0.8);;
+}
+
+.subtitle {
+	color:#B2506A!important;
 }
 
 hr {

@@ -8,17 +8,72 @@
 <div class="article">
 	<h1 class="centered-text title-top">Ending Epidemics</h1>
 	<h1 class="centered-text title-bottom">With Maths!</h1>
-	<p class="centered-text faded-text"> Mathematical Biology - St. Olaf College - 2017</p>
+	<p class="centered-text faded-text subtitle">Mathematical Biology - St. Olaf College - 2017</p>
+	<p class="centered-text faded-text"><i>(<span id="minutes_read"></span> min read)</i></p>
 	</br>
-	<blockquote>You and I may not live to see the day, and my name may be forgotten when it comes; but the time will arrive when great outbreaks of cholera will be things of the past; and it is the <b>knowledge of the way in which the disease is propagated</b> which will cause them to disappear.<cite>John Snow (1854)</cite></blockquote>
-	<p>This is an unusually prescient quote. The English physician John Snow indeed never lived to see the day, but we no longer have great outbreaks of cholera. He was also right about how we eradicated it - it wasn't the discovery of a new medicine or even knowledge of the disease itself. We conquered cholera once we understood how it spread.</p>
-	<p>That we would one day overcome cholera was not something most people at the time believed. No one understood what caused it, theories proliferated, and it seemed inevitable that large dense cities would succumb to these deadly outbreaks (in the same way that most people accept traffic jams as a feature of large modern cities).</p>
-	<p>The reason so many great minds were confounded by cholera was because of the scale of the problem. The bacteria were too small to see & the infection patterns too large for any one doctor to detect. It is precisely when human intuition fails that mathematical models expose such valuable insight. </p>
-	<p>Our goal is to develop a mathematical model that will allow us to understand the complex dynamics of disease in society. Let's see how many lives we can save.</p>
-	<p><i>[Maybe add something about how we often can't vaccinate everyone. We have limited resources. How do we combat disease? A model can help inform these decisions. Otherwise we end up like the public health department of London that fought cholera by dumping the cesspools in the water and thus increased the outbreak. Or like the plague victims in ancient city who killed all the stray cats that they thought were carrying the disease, but those were eating the rats, so the disease spread even more]</i></p>
+
+	<p>Cholera is an infectious disease that has claimed the lives of <a href="https://en.wikipedia.org/wiki/Cholera#cite_note-70" target="blank">tens of millions</a> of humans since the 19th century. Outbreaks of Cholera are particularly grim &mdash; victims die of dehydration but blood continues to flow to their brains. They remain conscious as their organs begin to fail, fully aware of their slow death. Whole families would perish together in this way over several days. </p>
+	<p>While cholera outbreaks <a href="https://en.wikipedia.org/wiki/Cholera_outbreaks_and_pandemics#Notable_outbreaks_.282010.E2.80.93present.29">continue to happen</a> (the latest incidence is April 2017 in Yemen at the time of writing), for most countries, they are a thing of the past. We ended this epidemic not by the discovery of new medicine (cholera has a very simple cure: drink lots of clean water) but <i>by understanding its transmission</i>.</p>
+	<p>Enacting public health policies without understanding how diseases spread could very well make things worse and cost lives. In fact, this is exactly what happened in the 1854 cholera outbreak in London. It was believed that the unsanitary conditions of <a href="https://en.wikipedia.org/wiki/Cesspit">cesspools</a> around the city were poisoning the air and spreading the disease. The Sewer Commission launched an elaborate campaign to clean up the city &mdash; enforcing by law that raw sewage contained in houses be dumped into the Thames river. As a result, the city smelled much nicer, but Cholera is a water-borne disease. Drinking infected water is how you contract it. A violent outbreak struck soon after.</p>
+	<h2>Our Goal</h2>
+	<p>We want to understand how cholera spreads so that we can predict and prevent any outbreaks. The introduction of mathematical models to the field of epidemiology is what allows us to do this.</p>
+	<p>The people who decided to dump the sewage into the river were not dim. There was a lot of evidence that seemed to suggest that the filthy air was the cause. It made sense intuitively.</p>
+	<p>Mathematical models allow us to gain insight into complex mechanisms, exactly when human intuition fails. We're going to look at how these mathematical tools can tame this complexity and allow us to make informed decisions. </p>
 	<hr>
-	<h2>How a Disease Spreads</h2>
-	<p>[Let's start with a simple model. How does something like the common cold spread?]</p>
+	<h2>How Does a Disease Spread?</h2>
+	<p>[Let's start by constructing a model for a simple infectious disease, like the flu! <i>My goal here is to motivate the use of differential equations and to expose the process of how they came up with SIR in the first place.</i>]</p>
+	<p>[By playing around with a model that only has healthy and infected, they can see (1) a disease can immediately die out if it's not spreading fast enough (2) a disease could become endemic and never go away (3) how sensitive the model feels to the various parameters.]</p>
+	<p>[Point out that the equation, the simulation, and the graph, are all different representations of the same system. Each just allows us to view things at various levels of detail. Like John Snow alternating between walking around and talking to individual people to looking at the whole city at once]</p>
+	<p>[Add death as a new compartment with a rate of death. How does rate of death matter? Make the counter-intuitive discovery that high death rate = lower overall # of death. Plot the equation for all values of death rates to see this.]</p>
+	<p>[This is where the <b>excercises</b> come in, throughout this section: (1) can you plot the simple model in R and see these results? Can you find the death rate that leads to the lowest total deaths?]</p>
+	<hr>
+	<h2>The SIR Model</h2>
+	<p>[This is the basic model developed to attempt to model infectious disease. Where we had "death", they have "recovered". This is because it was mostly concerned with disease incidence. If most people got infected and recovered that's still bad.]</p>
+	<p>[Introduce equations, look at it in graph and in simulation]</p>
+	<p>[Can we determine when an epidemic occurs? We can fiddle around with beta and gamma, but we need to be able to see across both parameters. Just like we did before to see all values of death rate and their effect, we can simulatnously look at these two variables. (Note on what happens with 4 or more dimensions, and we can still use mathematical tools even if we can't visualize it)]</p>
+	<p>[Just as before, students will be asked to continue to construct this in R. The idea is to be able to make intuitive insights using the visualizations and confirm them and see them mathematically using R. This way of switching between getting an intuition while developing your model is I think a powerful way of learning.]</p>
+	<hr>
+	<h2>Back to Cholera</h2>
+	<p>[Now let's apply our SIR model to cholera. <a href="https://cran.r-project.org/web/packages/cholera/vignettes/time.series.html">This</a> is what the fatalaties look like. It doesn't quite match. A lot more people should have died. Why didn't they?] </p>
+	<p>[<i>I'm not sure where to go from here, because to truly get an accurate model we have to include the fact that number if infected doesn't actually increase infection rate, because it's only one specific family whose cesspool leaks into the water. We can model the pump removal and use that to explain why the infection stopped suddenly but that's not actually what happened. Should we lie? Alternatively we can just try to apply it to another dat set]</i>] </p>
+	<hr>
+	<h2>Where to Next?</h2>
+	<p><a href="https://github.com/lindbrook/cholera/blob/master/README.Rmd">This</a> is a wondeful package to explore different hypothesis for the cholera outbreak. It contains the pump locations, fatalaties & addresses</p>
+	<!--
+		====================
+		- How does a disease spread?
+
+		* Just a basic healthy/infected simulation. We learned that everyone is healthy as long as no one is sick. Click to toggle sickness. Now that's still not quite causing an epidemic. Try clicking and holding. This disease never goes away now. 
+
+		The initial conditions matter a lot.
+
+		* Now to put this into an equation, it's nice to be able to see the whole behavior over time. We can also tweak it! 
+		* But we can still see what the simulation actually looks like. Note that all three of these representations (simulation, equation and graph) are all different ways of looking at the same system. But because we're looking at a process in time, each one offers us varying levels of detail, and allows us to make different insights. 
+
+		=======================
+		- The SIR Model
+
+		* This is a tool developed by X to model Y. 
+		* Let's see what this looks like. Show the equations and its graph. 
+		* At what point does this epidemic explode? 
+
+		=================
+		- Back to Cholera
+
+		* Apply our model to the disaease, given some data, and answer some questions about how to prevent it and such. 
+		==================
+		- Extend the model
+
+		* Add death
+		* Add spatial or argue for why spatial doesn't matter
+
+	 -->
 </div>
+<script type="text/javascript">
+	// Compute how many minutes to read 
+	var wordCount = document.querySelector(".article").textContent.split(" ").length;
+	var minutes = Math.round(wordCount / 200);
+	document.querySelector("#minutes_read").innerHTML = String(minutes);
+</script>
 </body>
 </html>
